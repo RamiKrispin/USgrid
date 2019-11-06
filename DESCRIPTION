@@ -1,11 +1,21 @@
 Package: USelectricity
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Demand for Electricity in the US 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: person("Rami", "Krispin", email = "rami.krispin@gmail.com",
+  role = c("aut", "cre"))
+Maintainer: Rami Krispin <rami.krispin@gmail.com>
+#Description: Hourly time series data of the demand for electricity in the US by region and generation type since XXX
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Depends:
+  R (>= 3.0.2)
+Suggests:
+    knitr,
+    rmarkdown,
+    devtools,
+    TSstudio
+VignetteBuilder: knitr
+URL: https://github.com/RamiKrispin/USelectricity
+BugReports: https://github.com/RamiKrispin/USelectricity/issues
