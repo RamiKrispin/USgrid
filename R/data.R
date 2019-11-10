@@ -58,3 +58,34 @@
 #'
 
 "US_source"
+
+#' Demand for California Independent System Operator (CISO)
+
+#' @description The demand for electricity in California subregion since July 2018 by operator.
+#'
+#' Units: megawatthours
+#'
+#' Time zone: UTC
+#'
+#'
+#' @format A tsibble object with hourly intervals
+#' @source US Energy Information Administration (Nov 2019) \href{https://www.eia.gov/}{website}
+#' @keywords datasets, time-series
+#' @details The dataset contains the hourly demand and supply (generation) for electricity in the US (megawatthours).
+#' The `source` column describes the type of the energy source
+#' @examples
+#'
+#' data(Cal_elec)
+#'
+#' library(plotly)
+#'
+#' plot_ly(data = Cal_elec,
+#'         x = ~ date_time,
+#'         y = ~ series,
+#'         color = ~ operator,
+#'         type = "scatter",
+#'         mode = "lines")
+#'
+
+"US_source"
+
