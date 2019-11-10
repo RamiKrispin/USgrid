@@ -20,7 +20,7 @@ Time zone: UTC
 }
 \details{
 The dataset contains the hourly demand and supply (generation) for electricity in the US (megawatthours).
-The `type` column describe the type of the series (demand or generation)
+The `type` column describes the type of the series (demand or generation)
 }
 \examples{
 
