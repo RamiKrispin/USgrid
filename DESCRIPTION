@@ -21,3 +21,4 @@ Suggests:
 VignetteBuilder: knitr
 URL: https://github.com/RamiKrispin/USelectricity
 BugReports: https://github.com/RamiKrispin/USelectricity/issues
+RoxygenNote: 6.1.1
