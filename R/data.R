@@ -71,8 +71,8 @@
 #' @format A tsibble object with hourly intervals
 #' @source US Energy Information Administration (Nov 2019) \href{https://www.eia.gov/}{website}
 #' @keywords datasets, time-series
-#' @details The dataset contains the hourly demand and supply (generation) for electricity in the US (megawatthours).
-#' The `source` column describes the type of the energy source
+#' @details The dataset contains the hourly demand for electricity in the California subregion (megawatthours).
+#' The `operator` column describes the name of operator provider
 #' @examples
 #'
 #' data(Cal_elec)
@@ -87,5 +87,5 @@
 #'         mode = "lines")
 #'
 
-"US_source"
+"Cal_elec"
 
