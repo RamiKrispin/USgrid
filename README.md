@@ -20,7 +20,7 @@ Currently, the package available only on Github version:
 remotes::install_github("RamiKrispin/USgrid")
 ```
 
-## Example
+## Examples
 
 The hourly demand and generation (supply) of electricty in the US:
 
@@ -43,7 +43,7 @@ plot_ly(data = US_elec,
 ```
 <img src="man/figures/US_elec.png" width="100%" />
 
-
+The hourly generation (supply) of electricty in the US by source:
 ``` r
 plot_ly(data = US_source,
         x = ~ date_time,
