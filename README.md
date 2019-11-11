@@ -44,3 +44,17 @@ plot_ly(data = US_elec,
 <img src="man/figures/US_elec.png" width="100%" />
 
 
+``` r
+plot_ly(data = US_source,
+        x = ~ date_time,
+        y = ~ series,
+        color = ~ source,
+        type = "scatter",
+        mode = "lines") %>%
+  layout(title = "US Electricity Generation by Source",
+         yaxis = list(title = "Mwh"),
+         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+```
+<img src="man/figures/US_source.png" width="100%" />
+<img src="man/figures/US_source2.png" width="100%" />
+
