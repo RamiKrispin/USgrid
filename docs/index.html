@@ -73,7 +73,9 @@
 <ul>
 <li><p><code>US_elec</code> - the total hourly demand and supply (generation) for electricity in the US since July 2015</p></li>
 <li><p><code>US_source</code> - the hourly demand for electricity in the US by energy source (natural gas, coal, solar, etc.) since July 2018</p></li>
+<li><p><code>Cal_elec</code> - The California subregion hourly demand by operator since July 2018</p></li>
 </ul>
+<p>All datasets are in <a href="https://tsibble.tidyverts.org/index.html">tsibble</a> format</p>
 <p><strong>Source:</strong> <a href="https://www.eia.gov/">US Energy Information Administration</a>, Nov 2019</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -112,7 +114,7 @@
 <a class="sourceLine" id="cb3-8" data-line-number="8">         <span class="dt">yaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Mwh"</span>),</a>
 <a class="sourceLine" id="cb3-9" data-line-number="9">         <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Nov 2019)"</span>))</a></code></pre></div>
 <p><img src="reference/figures/US_source.png" width="100%"></p>
-<p>The hourly demand in subregion California by operator</p>
+<p>The California subregion hourly demand by operator</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly</a></span>(<span class="dt">data =</span> Cal_elec,</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">        <span class="dt">x =</span> <span class="op">~</span><span class="st"> </span>date_time,</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">        <span class="dt">y =</span> <span class="op">~</span><span class="st"> </span>series,</a>
