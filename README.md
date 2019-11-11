@@ -57,3 +57,17 @@ plot_ly(data = US_source,
 ```
 <img src="man/figures/US_source.png" width="100%" />
 
+The hourly demand in subregion California by operator
+
+``` r
+plot_ly(data = Cal_elec,
+        x = ~ date_time,
+        y = ~ series,
+        color = ~ operator,
+        type = "scatter",
+        mode = "lines") %>%
+  layout(title = "California Hourly Demand by Operator",
+         yaxis = list(title = "Mwh"),
+         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+```
+<img src="man/figures/Cal_elec.png" width="100%" />
