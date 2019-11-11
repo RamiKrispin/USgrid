@@ -56,5 +56,4 @@ plot_ly(data = US_source,
          xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
 ```
 <img src="man/figures/US_source.png" width="100%" />
-<img src="man/figures/US_source2.png" width="100%" />
 
