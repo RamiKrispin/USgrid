@@ -19,6 +19,6 @@ Suggests:
     devtools,
     plotly
 VignetteBuilder: knitr
-URL: https://github.com/RamiKrispin/USelectricity
-BugReports: https://github.com/RamiKrispin/USelectricity/issues
+URL: https://github.com/RamiKrispin/USgrid
+BugReports: https://github.com/RamiKrispin/USgrid/issues
 RoxygenNote: 6.1.1
