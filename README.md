@@ -10,6 +10,10 @@ The USgrid R package provides a set of high frequency (hourly) time-series datas
 
 * `US_source` - the hourly demand for electricity in the US by energy source (natural gas, coal, solar, etc.) since July 2018
 
+* `Cal_elec` - The California subregion hourly demand by operator since July 2018
+
+All datasets are in [tsibble](https://tsibble.tidyverts.org/index.html) format
+
 **Source:** [US Energy Information Administration](https://www.eia.gov/), Nov 2019
 
 ## Installation
@@ -57,7 +61,7 @@ plot_ly(data = US_source,
 ```
 <img src="man/figures/US_source.png" width="100%" />
 
-The hourly demand in subregion California by operator
+The California subregion hourly demand by operator
 
 ``` r
 plot_ly(data = Cal_elec,
