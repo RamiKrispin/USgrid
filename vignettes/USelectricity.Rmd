@@ -1,0 +1,67 @@
+---
+title: "US Electricity"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{US Electricity}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  fig.width=8, 
+  fig.height=5,
+  collapse = TRUE,
+  warning = FALSE, 
+  message = FALSE,
+  comment = "#>"
+)
+```
+
+The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US. That includes the following series:
+
+* `US_elec`  - the total hourly demand and supply (generation) for electricity in the US since July 2015
+
+* `US_source` - the hourly demand for electricity in the US by energy source (natural gas, coal, solar, etc.) since July 2018
+
+* `Cal_elec` - The California subregion hourly demand by operator since July 2018
+
+## Data structure
+
+All the series are in [tsibble](https://tsibble.tidyverts.org/index.html) format
+
+## The US total demand and supply for electricity
+
+The `US_elec` series describes the total hourly demand and supply (generation) of electricity in the US since July 2015:
+
+```{r }
+library(USgrid)
+
+data("US_elec")
+
+head(US_elec)
+
+```
+
+Where the `type` variable defines the series key (i.e., demand or generation). As you can see in the plot below, the generation of electricity is relatively close to the demand:
+
+
+```{r}
+library(plotly)
+
+plot_ly(data = US_elec,
+        x = ~ date_time,
+        y = ~ series,
+        color = ~ type,
+        line = list(width = 1),
+        type = "scatter",
+        mode = "lines") %>%
+  layout(title = "US Electricity Generation by Source",
+         yaxis = list(title = "Mwh"),
+         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+```
+
+
+## Total demand by energy source
+
+The `US_source` provides a break down of the hourly generation by energy source
