@@ -10,7 +10,7 @@ The USgrid R package provides a set of high frequency (hourly) time-series datas
 
 * `US_elec`  - the total hourly demand and supply (generation) for electricity in the US since July 2015
 
-* `US_source` - the hourly demand for electricity in the US by energy source (natural gas, coal, solar, etc.) since July 2018
+* `US_source` - the US net generation of electricity by energy source (natural gas, coal, solar, etc.) since July 2018
 
 * `Cal_elec` - The California subregion hourly demand by operator since July 2018
 
