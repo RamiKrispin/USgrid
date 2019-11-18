@@ -19,7 +19,7 @@ Units: megawatthours
 Time zone: UTC
 }
 \details{
-The dataset contains the hourly demand and supply (generation) for electricity in the US (megawatthours).
+The dataset contains the hourly net generation of electricity in the US (megawatthours) by energy source
 The `source` column describes the type of the energy source
 }
 \examples{
