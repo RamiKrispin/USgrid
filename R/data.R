@@ -41,7 +41,7 @@
 #' @format A tsibble object with hourly intervals
 #' @source US Energy Information Administration (Nov 2019) \href{https://www.eia.gov/}{website}
 #' @keywords datasets, time-series
-#' @details The dataset contains the hourly demand and supply (generation) for electricity in the US (megawatthours).
+#' @details The dataset contains the hourly net generation of electricity in the US (megawatthours) by energy source
 #' The `source` column describes the type of the energy source
 #' @examples
 #'
