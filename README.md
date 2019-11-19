@@ -57,7 +57,7 @@ plot_ly(data = US_source,
         color = ~ source,
         type = "scatter",
         mode = "lines") %>%
-  layout(title = "US Electricity Generation by Source",
+  layout(title = "US Electricity Generation by Energy Source",
          yaxis = list(title = "Mwh"),
          xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
 ```
