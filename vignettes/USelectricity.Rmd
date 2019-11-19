@@ -62,6 +62,35 @@ plot_ly(data = US_elec,
 ```
 
 
-## Total demand by energy source
+## Generation by energy source
 
-The `US_source` provides a break down of the hourly generation by energy source
+The `US_source` series describes the net generation of electricity by energy source (i.e., natural gas, coal, solar, etc.) since July 2018:
+
+```{r}
+library(tidyr)
+
+source_wider <- US_source %>% 
+  pivot_wider(names_from = source, values_from = series)
+
+ plot_ly(data = source_wider, x = ~date_time, y = ~`natural gas`, 
+             name = "Natural Gas", 
+             type = "scatter", 
+             mode = "none", 
+             stackgroup = "one", 
+             groupnorm = "percent",
+             fillcolor = "lightgreen") %>%
+  add_trace(y = ~coal, name = "Coal", fillcolor = "#7f7f7f") %>%
+  add_trace(y = ~nuclear, name = "Nuclear", fillcolor = "#F5FF8D") %>%
+  add_trace(y = ~hydro, name = "Hydro", fillcolor = "red") %>%
+  add_trace(y = ~wind, name = "Wind", fillcolor = "#1f77b4") %>%
+  add_trace(y = ~other, name = "Other", fillcolor = "#e377c2") %>%
+  add_trace(y = ~solar, name = "Solar", fillcolor = "orange") %>%
+  add_trace(y = ~petroleum, name = "Petroleum", fillcolor = "black") %>%
+  layout(title = "US Electricity Generation by Energy Source",
+         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)",
+                      showgrid = FALSE),
+         yaxis = list(title = "Percentage",
+                      showgrid = FALSE,
+                      ticksuffix = "%"))
+```
+

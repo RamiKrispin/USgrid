@@ -45,6 +45,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/USelectricity.html">US Electricity</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -72,7 +84,7 @@
 <p>The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US. That includes the following series:</p>
 <ul>
 <li><p><code>US_elec</code> - the total hourly demand and supply (generation) for electricity in the US since July 2015</p></li>
-<li><p><code>US_source</code> - the hourly demand for electricity in the US by energy source (natural gas, coal, solar, etc.) since July 2018</p></li>
+<li><p><code>US_source</code> - the US net generation of electricity by energy source (natural gas, coal, solar, etc.) since July 2018</p></li>
 <li><p><code>Cal_elec</code> - The California subregion hourly demand by operator since July 2018</p></li>
 </ul>
 <p>All datasets are in <a href="https://tsibble.tidyverts.org/index.html">tsibble</a> format</p>
