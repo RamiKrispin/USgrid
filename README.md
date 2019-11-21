@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US. That includes the following series:
+The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US (lower-48 states, excluding Alaska and Hawaii). That includes the following series:
 
 * `US_elec`  - the total hourly demand and supply (generation) for electricity in the US since July 2015
 
