@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US (lower 48 states, excluding Alaska and Hawaii). That includes the following series:
+The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US (lower-48 states, excluding Alaska and Hawaii). That includes the following series:
 
 * `US_elec`  - the total hourly demand and supply (generation) for electricity in the US since July 2015
 
@@ -56,7 +56,7 @@ plot_ly(data = US_elec,
         line = list(width = 1),
         type = "scatter",
         mode = "lines") %>%
-  layout(title = "US Electricity Generation by Source",
+  layout(title = "US Electricity Generation vs. Demand",
          yaxis = list(title = "Mwh"),
          xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
 ```
@@ -68,6 +68,8 @@ The `US_source` series describes the net generation of electricity by energy sou
 
 ```{r}
 library(tidyr)
+
+data("US_source")
 
 source_wider <- US_source %>% 
   pivot_wider(names_from = source, values_from = series)
@@ -86,11 +88,37 @@ source_wider <- US_source %>%
   add_trace(y = ~other, name = "Other", fillcolor = "#e377c2") %>%
   add_trace(y = ~solar, name = "Solar", fillcolor = "orange") %>%
   add_trace(y = ~petroleum, name = "Petroleum", fillcolor = "black") %>%
-  layout(title = "US Electricity Generation by Energy Source",
+  layout(title = "US Electricity Generation by Energy Source Dist.",
          xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)",
                       showgrid = FALSE),
          yaxis = list(title = "Percentage",
                       showgrid = FALSE,
                       ticksuffix = "%"))
+```
+
+
+# California subregion - demand by operator
+
+The `Cal_elec` series provides hourly demand by operator since July 2018 for California subregion. That includes the following operators:
+
+* Pacific Gas and Electric
+* San Diego Gas and Electric
+* Southern California Edison
+* Valley Electric Association
+
+
+
+```{r}
+data("Cal_elec")
+
+plot_ly(data = Cal_elec,
+        x = ~ date_time,
+        y = ~ series,
+        color = ~ operator,
+        type = "scatter",
+        mode = "lines") %>%
+  layout(title = "California Hourly Demand by Operator",
+         yaxis = list(title = "Mwh"),
+         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
 ```
 
