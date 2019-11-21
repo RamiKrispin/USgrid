@@ -7,6 +7,6 @@ Add 3 series:
 
 * `Cal_elec` - The California subregion hourly demand by operator since July 2018
 
-All series updated up to Nov 30th 2019
+All series updated up to Nov 1st 2019 (need to updated)
 
 * Added a `NEWS.md` file to track changes to the package.
