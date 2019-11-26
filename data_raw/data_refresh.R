@@ -1,6 +1,6 @@
 #----------- Data refresh function -----------
 
-dt_ref <- function(end_time){
+dt_refresh <- function(end_time){
 
   end_time_old <- us_elec_old <- us_elec_old1 <- NULL
   us_source_old <- us_source_old1 <- us_source_new <- NULL
@@ -190,18 +190,18 @@ dt_ref <- function(end_time){
 
   #--- Saving the series ---#
   # US_elec
-  plotly::plot_ly(data = us_elec_new,
+  base::print(plotly::plot_ly(data = us_elec_new,
                   x = ~ date_time,
                   y = ~ series,
                   color = ~ type,
                   type = "scatter",
-                  mode = "lines")
+                  mode = "lines"))
 
 
   base::cat(base::paste(" US_elec series summary", "\n",
                         "----------------------", "\n",
                         "Start time:", base::min(us_elec_new$date_time), "\n",
-                        "End time:", base::max(us_elec$date_time), "\n",
+                        "End time:", base::max(us_elec_new$date_time), "\n",
                         "Missing values:", base::any(base::is.na(us_elec_new$series))))
 
 
@@ -212,12 +212,12 @@ dt_ref <- function(end_time){
   }
 
   # US_source
-  plotly::plot_ly(data = us_source_new,
+  base::print(plotly::plot_ly(data = us_source_new,
                   x = ~ date_time,
                   y = ~ series,
                   color = ~ source,
                   type = "scatter",
-                  mode = "lines")
+                  mode = "lines"))
 
 
   base::cat(base::paste(" US_source series summary", "\n",
@@ -234,12 +234,12 @@ dt_ref <- function(end_time){
   }
 
   # Cal_elec
-  plotly::plot_ly(data = cal_elec_new,
+  base::print(plotly::plot_ly(data = cal_elec_new,
                   x = ~ date_time,
                   y = ~ series,
                   color = ~ operator,
                   type = "scatter",
-                  mode = "lines")
+                  mode = "lines"))
 
   base::cat(base::paste(" Cal_elec series summary", "\n",
                         "-----------------------", "\n",
