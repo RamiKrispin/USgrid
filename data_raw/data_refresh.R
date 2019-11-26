@@ -3,8 +3,9 @@
 dt_ref <- function(end_time){
 
   end_time_old <- us_elec_old <- us_elec_old1 <- NULL
-  us_source_old <- us_source_old1 <-cal_elec_old <- NULL
-  US_source_new <- start_time <- NULL
+  us_source_old <- us_source_old1 <- us_source_new <- NULL
+  cal_elec_old <- cal_elec_old1 <- cal_elec_new <-NULL
+  start_time <- NULL
   # Error handling
   if(!lubridate::is.POSIXct(end_time)){
     stop("The 'end_time' argument is not POSIXct")
@@ -89,8 +90,8 @@ dt_ref <- function(end_time){
   cal_elec_old <- USgrid::Cal_elec
 
   end_time_old <- base::min(base::max(us_elec_old$date_time),
-                          base::max(us_source_old$date_time),
-                          base::max(cal_elec_old$date_time))
+                            base::max(us_source_old$date_time),
+                            base::max(cal_elec_old$date_time))
 
   start_time <- end_time_old + lubridate::hours(1)
 
@@ -119,16 +120,13 @@ dt_ref <- function(end_time){
   us_gen <- data.frame(date_time = seq.POSIXt(from = us_elec_start, to = end_time, by = "hour")) %>%
     dplyr::left_join(us_gen1,  by = "date_time")
 
-  US_elec_new <- dplyr::bind_rows(us_demand, us_gen) %>%
+  us_elec_new <- dplyr::bind_rows(us_demand, us_gen) %>%
     tsibble::as_tsibble(key = type, index = date_time)
 
 
-  head(US_elec_new)
-  tail(US_elec_new)
-
   # Valdidate the dataset
 
-  us_elec_old1 <- US_elec_new %>% dplyr::filter(date_time <= end_time_old)
+  us_elec_old1 <- us_elec_new %>% dplyr::filter(date_time <= end_time_old)
 
   if(!base::identical(us_elec_old, us_elec_old1)){
     stop("It seems like the new pull is not match to the old one for the 'US_elec' series")
@@ -172,16 +170,91 @@ dt_ref <- function(end_time){
     dplyr::select(-flag) %>%
     dplyr::mutate(operator = trimws(sapply(strsplit(name, split = ","),function(x) x[length(x) - 1])))
 
-  Cal_elec <- reg_elec(catalog = cal_cat, end_time = end_time)
-  table(Cal_elec$status)
+  cal_elec_new <- reg_elec(catalog = cal_cat, end_time = end_time)
 
-  if(all(Cal_elec$status == "ok")){
-    Cal_elec <- Cal_elec %>%
+  if(all(cal_elec_new$status == "ok")){
+    cal_elec_new <- cal_elec_new %>%
       dplyr::select(-status) %>%
       tsibble::as_tsibble(key = operator, index = date_time)
   } else {
     warning("Some observations do not have 'ok' status, check the series")
   }
+
+  # Valdidate the dataset
+  cal_elec_old1 <- cal_elec_new %>% dplyr::filter(date_time <= end_time_old)
+
+  if(!base::identical(cal_elec_old, cal_elec_old1)){
+    stop("It seems like the new pull is not match to the old one for the 'Cal_elec' series")
+  }
+
+
+  #--- Saving the series ---#
+  # US_elec
+  plotly::plot_ly(data = us_elec_new,
+                  x = ~ date_time,
+                  y = ~ series,
+                  color = ~ type,
+                  type = "scatter",
+                  mode = "lines")
+
+
+  base::cat(base::paste(" US_elec series summary", "\n",
+                        "----------------------", "\n",
+                        "Start time:", base::min(us_elec_new$date_time), "\n",
+                        "End time:", base::max(us_elec$date_time), "\n",
+                        "Missing values:", base::any(base::is.na(us_elec_new$series))))
+
+
+  q <- readline("Do you want to save the updated US_elec series? [Y/n]")
+  if(q == "" | base::tolower(q) == "y"){
+    US_elec <- us_elec_new
+    usethis::use_data(US_elec, overwrite = TRUE)
+  }
+
+  # US_source
+  plotly::plot_ly(data = us_source_new,
+                  x = ~ date_time,
+                  y = ~ series,
+                  color = ~ source,
+                  type = "scatter",
+                  mode = "lines")
+
+
+  base::cat(base::paste(" US_source series summary", "\n",
+                        "-------------------------", "\n",
+                        "Start time:", base::min(us_source_new$date_time), "\n",
+                        "End time:", base::max(us_source_new$date_time), "\n",
+                        "Missing values:", base::any(base::is.na(us_source_new$series))))
+
+
+  q <- readline("Do you want to save the updated US_source series? [Y/n]")
+  if(q == "" | base::tolower(q) == "y"){
+    US_source <- us_source_new
+    usethis::use_data(US_source, overwrite = TRUE)
+  }
+
+  # Cal_elec
+  plotly::plot_ly(data = cal_elec_new,
+                  x = ~ date_time,
+                  y = ~ series,
+                  color = ~ operator,
+                  type = "scatter",
+                  mode = "lines")
+
+  base::cat(base::paste(" Cal_elec series summary", "\n",
+                        "-----------------------", "\n",
+                        "Start time:", base::min(cal_elec_new$date_time), "\n",
+                        "End time:", base::max(cal_elec$date_time), "\n",
+                        "Missing values:", base::any(base::is.na(cal_elec_new$series))))
+
+
+  q <- readline("Do you want to save the updated Cal_elec series? [Y/n]")
+  if(q == "" | base::tolower(q) == "y"){
+    Cal_elec <- cal_elec_new
+    usethis::use_data(Cal_elec, overwrite = TRUE)
+  }
+
+
 
 }
 
