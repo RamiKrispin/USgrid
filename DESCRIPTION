@@ -15,6 +15,7 @@ Imports:
   tsibble(>= 0.8.5)
 Suggests:
     knitr,
+    lubridate,
     rmarkdown,
     devtools,
     plotly,
