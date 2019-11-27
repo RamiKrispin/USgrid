@@ -18,7 +18,10 @@ Suggests:
     rmarkdown,
     devtools,
     plotly,
-    tidyr
+    remotes,
+    tidyr,
+    testthat,
+    usethis
 VignetteBuilder: knitr
 URL: https://github.com/RamiKrispin/USgrid
 BugReports: https://github.com/RamiKrispin/USgrid/issues
