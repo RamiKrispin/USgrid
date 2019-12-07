@@ -1,4 +1,4 @@
-# USgrid
+# USgrid <a href='https://ramikrispin.github.io/USgrid/'><img src='man/figures/USgrid.png' align="right"  /></a>
 
 <!-- badges: start -->
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
