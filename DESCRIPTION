@@ -1,7 +1,7 @@
 Package: USgrid
 Type: Package
 Title: The Demand and Supply for Electricity in the US
-Version: 0.0.9000
+Version: 0.1.0
 Authors@R: person("Rami", "Krispin", email = "rami.krispin@gmail.com",
   role = c("aut", "cre"))
 Maintainer: Rami Krispin <rami.krispin@gmail.com>
