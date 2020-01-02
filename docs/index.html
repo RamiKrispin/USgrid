@@ -92,7 +92,7 @@
 <li><p><code>Cal_elec</code> - The California subregion hourly demand by operator since July 2018</p></li>
 </ul>
 <p>All datasets are in <a href="https://tsibble.tidyverts.org/index.html">tsibble</a> format</p>
-<p><strong>Source:</strong> <a href="https://www.eia.gov/">US Energy Information Administration</a>, Nov 2019</p>
+<p><strong>Source:</strong> <a href="https://www.eia.gov/">US Energy Information Administration</a>, Dec 2019</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -117,7 +117,7 @@
 <a class="sourceLine" id="cb2-12" data-line-number="12">        <span class="dt">mode =</span> <span class="st">"lines"</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="st">        </span><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/layout">layout</a></span>(<span class="dt">title =</span> <span class="st">"US Electricity Demand vs. Supply (Hourly)"</span>,</a>
 <a class="sourceLine" id="cb2-14" data-line-number="14">               <span class="dt">yaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Mwh"</span>),</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">               <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Nov 2019)"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb2-15" data-line-number="15">               <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))</a></code></pre></div>
 <p><img src="reference/figures/US_elec.png" width="100%"></p>
 <p>The hourly generation (supply) of electricty in the US by source:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly</a></span>(<span class="dt">data =</span> US_source,</a>
@@ -128,7 +128,7 @@
 <a class="sourceLine" id="cb3-6" data-line-number="6">        <span class="dt">mode =</span> <span class="st">"lines"</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/layout">layout</a></span>(<span class="dt">title =</span> <span class="st">"US Electricity Generation by Energy Source"</span>,</a>
 <a class="sourceLine" id="cb3-8" data-line-number="8">         <span class="dt">yaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Mwh"</span>),</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">         <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Nov 2019)"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb3-9" data-line-number="9">         <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))</a></code></pre></div>
 <p><img src="reference/figures/US_source.png" width="100%"></p>
 <p>The California subregion hourly demand by operator</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly</a></span>(<span class="dt">data =</span> Cal_elec,</a>
@@ -139,7 +139,7 @@
 <a class="sourceLine" id="cb4-6" data-line-number="6">        <span class="dt">mode =</span> <span class="st">"lines"</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/layout">layout</a></span>(<span class="dt">title =</span> <span class="st">"California Hourly Demand by Operator"</span>,</a>
 <a class="sourceLine" id="cb4-8" data-line-number="8">         <span class="dt">yaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Mwh"</span>),</a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">         <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Nov 2019)"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb4-9" data-line-number="9">         <span class="dt">xaxis =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(<span class="dt">title =</span> <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))</a></code></pre></div>
 <p><img src="reference/figures/Cal_elec.png" width="100%"></p>
 </div>
 </div>
@@ -174,7 +174,7 @@
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
 <li><a href="https://cran.r-project.org/package=USgrid"><img src="https://www.r-pkg.org/badges/version/USgrid" alt="CRAN status"></a></li>
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
+<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
 </ul>
 </div>
 </div>
