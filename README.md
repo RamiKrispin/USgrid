@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/USgrid)](https://cran.r-project.org/package=USgrid)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
 The USgrid R package provides a set of high frequency (hourly) time-series datasets, describing the demand and generation of electricity in the US (lower-48 states, excluding Alaska and Hawaii). That includes the following series:
@@ -16,7 +16,7 @@ The USgrid R package provides a set of high frequency (hourly) time-series datas
 
 All datasets are in [tsibble](https://tsibble.tidyverts.org/index.html) format
 
-**Source:** [US Energy Information Administration](https://www.eia.gov/), Nov 2019
+**Source:** [US Energy Information Administration](https://www.eia.gov/), Dec 2019
 
 ## Installation
 
@@ -45,7 +45,7 @@ plot_ly(data = US_elec,
         mode = "lines") %>%
         layout(title = "US Electricity Demand vs. Supply (Hourly)",
                yaxis = list(title = "Mwh"),
-               xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+               xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)"))
 ```
 <img src="man/figures/US_elec.png" width="100%" />
 
@@ -59,7 +59,7 @@ plot_ly(data = US_source,
         mode = "lines") %>%
   layout(title = "US Electricity Generation by Energy Source",
          yaxis = list(title = "Mwh"),
-         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+         xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)"))
 ```
 <img src="man/figures/US_source.png" width="100%" />
 
@@ -74,6 +74,6 @@ plot_ly(data = Cal_elec,
         mode = "lines") %>%
   layout(title = "California Hourly Demand by Operator",
          yaxis = list(title = "Mwh"),
-         xaxis = list(title = "Source: US Energy Information Administration (Nov 2019)"))
+         xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)"))
 ```
 <img src="man/figures/Cal_elec.png" width="100%" />
