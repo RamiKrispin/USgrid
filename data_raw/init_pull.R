@@ -24,7 +24,7 @@ eia_series <- function(api_key, series_id){
 }
 
 #----------- Set a uniform end time for all series -----------
-end_time <- as.POSIXct("2019-11-01 00:00:00", tz = "UTC") - lubridate::hours(1)
+end_time <- as.POSIXct("2020-01-01 00:00:00", tz = "UTC") - lubridate::hours(1)
 #----- Series 1 - Total Demand and Generation-----
 source("/Users/ramikrispin/R/packages/APIs/eia.R")
 tsAPI::eia_query(api_key = api_key,category_id = 2123635)
