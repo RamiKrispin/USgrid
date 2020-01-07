@@ -5,3 +5,4 @@
 ^docs$
 ^man/figures/*.*$
 ^vignettes/*.*$
+^cran-comments\.md$
