@@ -18,11 +18,19 @@ All datasets are in [tsibble](https://tsibble.tidyverts.org/index.html) format
 
 **Source:** [US Energy Information Administration](https://www.eia.gov/), Dec 2019
 
-## Installation
+Installation
+------------
 
-Currently, the package available only on Github version:
+Install the stable version from [CRAN](https://CRAN.R-project.org/package=USgrid):
 
 ``` r
+install.packages("USgrid")
+```
+
+or install the development version from [Github](https://github.com/RamiKrispin/USgrid):
+
+``` r
+# install.packages("remotes")
 remotes::install_github("RamiKrispin/USgrid")
 ```
 
