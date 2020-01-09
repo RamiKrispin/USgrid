@@ -6,3 +6,4 @@
 ^man/figures/*.*$
 ^vignettes/*.*$
 ^cran-comments\.md$
+^CRAN-RELEASE$
