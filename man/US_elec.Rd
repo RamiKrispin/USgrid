@@ -36,5 +36,5 @@ plot_ly(data = US_elec,
         mode = "lines")
 
 }
-\keyword{datasets,}
+\keyword{datasets}
 \keyword{time-series}
