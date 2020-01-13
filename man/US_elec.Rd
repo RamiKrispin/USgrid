@@ -6,7 +6,7 @@
 \title{The US Hourly Demand and Supply for Electricity}
 \format{A tsibble object with hourly intervals}
 \source{
-US Energy Information Administration (Nov 2019) \href{https://www.eia.gov/}{website}
+US Energy Information Administration (Dec 2019) \href{https://www.eia.gov/}{website}
 }
 \usage{
 US_elec
