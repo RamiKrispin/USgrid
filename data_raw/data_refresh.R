@@ -1,6 +1,6 @@
 #----------- Data refresh function -----------
 
-dt_refresh <- function(end_time){
+dt_refresh <- function(end_time, api_key = Sys.getenv("eia_key")){
 
   end_time_old <- us_elec_old <- us_elec_old1 <- NULL
   us_source_old <- us_source_old1 <- us_source_new <- NULL
@@ -257,7 +257,7 @@ dt_refresh <- function(end_time){
 
 
 }
-
+dt_refresh(end_time = Sys.time())
 
 
 
