@@ -1,6 +1,10 @@
-# USgrid 0.0.9000 Notes
+# USgrid 0.1.1
 
-Add 3 series:
+* Updated the package datasets
+
+# USgrid 0.1.0
+
+Addws the following series:
 
 * `US_elec`  - the total hourly demand and supply (generation) for electricity in the US since July 2015
 
