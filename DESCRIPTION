@@ -5,7 +5,7 @@ Version: 0.1.2
 Authors@R: person("Rami", "Krispin", email = "rami.krispin@gmail.com",
   role = c("aut", "cre"))
 Maintainer: Rami Krispin <rami.krispin@gmail.com>
-Description: Provides a set of regular time-series datasets, describing the US electricity grid. That includes the total demand and supply, and as well as the demand by energy source (coal, solar, wind, etc.). Source: US Energy Information Administration (Dec 2019) <www.eia.gov/>.
+Description: Provides a set of regular time-series datasets, describing the US electricity grid. That includes the total demand and supply, and as well as the demand by energy source (coal, solar, wind, etc.). Source: US Energy Information Administration (Mar 2021) <https://www.eia.gov/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
