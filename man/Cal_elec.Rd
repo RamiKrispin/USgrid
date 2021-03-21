@@ -4,9 +4,11 @@
 \name{Cal_elec}
 \alias{Cal_elec}
 \title{Demand for California Independent System Operator (CISO)}
-\format{A tsibble object with hourly intervals}
+\format{
+A tsibble object with hourly intervals
+}
 \source{
-US Energy Information Administration (Dec 2019) \href{https://www.eia.gov/}{website}
+US Energy Information Administration (Dec 2019) \href{www.eia.gov}{website}
 }
 \usage{
 Cal_elec

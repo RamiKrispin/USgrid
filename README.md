@@ -29,8 +29,7 @@ That includes the following series:
 All datasets are in [tsibble](https://tsibble.tidyverts.org/index.html)
 format
 
-**Source:** [US Energy Information
-Administration](https://www.eia.gov/),Mar 2021
+**Source:** [US Energy Information Administration](www.eia.gov),Mar 2021
 
 ## Installation
 

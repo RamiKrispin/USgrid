@@ -4,9 +4,11 @@
 \name{US_elec}
 \alias{US_elec}
 \title{The US Hourly Demand and Supply for Electricity}
-\format{A tsibble object with hourly intervals}
+\format{
+A tsibble object with hourly intervals
+}
 \source{
-US Energy Information Administration (Dec 2019) \href{https://www.eia.gov/}{website}
+US Energy Information Administration (Dec 2019) \href{www.eia.gov}{website}
 }
 \usage{
 US_elec
