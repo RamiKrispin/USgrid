@@ -1,3 +1,7 @@
+# USgrid 0.1.2
+
+* Updated the package datasets (up to date to March 15th, 2021)
+
 # USgrid 0.1.1
 
 * Updated the package datasets
