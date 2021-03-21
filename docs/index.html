@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">USgrid</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -94,7 +94,7 @@
 <li><p><code>Cal_elec</code> - The California subregion hourly demand by operator since July 2018</p></li>
 </ul>
 <p>All datasets are in <a href="https://tsibble.tidyverts.org/index.html">tsibble</a> format</p>
-<p><strong>Source:</strong> <a href="https://www.eia.gov/">US Energy Information Administration</a>, Dec 2019</p>
+<p><strong>Source:</strong> <a href="https://www.eia.gov/">US Energy Information Administration</a>,Mar 2021</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -118,44 +118,48 @@
 
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">US_elec</span>)
 
-<span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plot_ly.html">plot_ly</a></span>(data = <span class="kw">US_elec</span>,
+<span class="fu"><a href="https://docs.ropensci.org/plotly/reference/plot_ly.html">plot_ly</a></span>(data = <span class="kw">US_elec</span>,
         x = <span class="op">~</span> <span class="kw">date_time</span>,
         y = <span class="op">~</span> <span class="kw">series</span>,
         color = <span class="op">~</span> <span class="kw">type</span>,
         colors = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"#66C2A5"</span>,<span class="st">"#8DA0CB"</span>),
         type = <span class="st">"scatter"</span>,
         mode = <span class="st">"lines"</span>) <span class="op">%&gt;%</span>
-        <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html">layout</a></span>(title = <span class="st">"US Electricity Demand vs. Supply (Hourly)"</span>,
+        <span class="fu"><a href="https://docs.ropensci.org/plotly/reference/layout.html">layout</a></span>(title = <span class="st">"US Electricity Demand vs. Supply (Hourly)"</span>,
                yaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Mwh"</span>),
-               xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))
+               xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Mar 2021)"</span>))
 </pre></div>
-<p><img src="reference/figures/US_elec.png" width="100%"></p>
+<p><img src="reference/figures/US_elec.svg" width="100%"></p>
 <p>The hourly generation (supply) of electricty in the US by source:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plot_ly.html">plot_ly</a></span>(data = <span class="kw">US_source</span>,
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"US_source"</span>)
+
+<span class="fu"><a href="https://docs.ropensci.org/plotly/reference/plot_ly.html">plot_ly</a></span>(data = <span class="kw">US_source</span>,
         x = <span class="op">~</span> <span class="kw">date_time</span>,
         y = <span class="op">~</span> <span class="kw">series</span>,
         color = <span class="op">~</span> <span class="kw">source</span>,
         type = <span class="st">"scatter"</span>,
         mode = <span class="st">"lines"</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html">layout</a></span>(title = <span class="st">"US Electricity Generation by Energy Source"</span>,
+  <span class="fu"><a href="https://docs.ropensci.org/plotly/reference/layout.html">layout</a></span>(title = <span class="st">"US Electricity Generation by Energy Source"</span>,
          yaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Mwh"</span>),
-         xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))
+         xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Mar 2021)"</span>))
 </pre></div>
-<p><img src="reference/figures/US_source.png" width="100%"></p>
+<p><img src="reference/figures/US_source.svg" width="100%"></p>
 <p>The California subregion hourly demand by operator</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plot_ly.html">plot_ly</a></span>(data = <span class="kw">Cal_elec</span>,
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"Cal_elec"</span>)
+
+<span class="fu"><a href="https://docs.ropensci.org/plotly/reference/plot_ly.html">plot_ly</a></span>(data = <span class="kw">Cal_elec</span>,
         x = <span class="op">~</span> <span class="kw">date_time</span>,
         y = <span class="op">~</span> <span class="kw">series</span>,
         color = <span class="op">~</span> <span class="kw">operator</span>,
         type = <span class="st">"scatter"</span>,
         mode = <span class="st">"lines"</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html">layout</a></span>(title = <span class="st">"California Hourly Demand by Operator"</span>,
+  <span class="fu"><a href="https://docs.ropensci.org/plotly/reference/layout.html">layout</a></span>(title = <span class="st">"California Hourly Demand by Operator"</span>,
          yaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Mwh"</span>),
-         xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Dec 2019)"</span>))
+         xaxis = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(title = <span class="st">"Source: US Energy Information Administration (Mar 2021)"</span>))
 </pre></div>
-<p><img src="reference/figures/Cal_elec.png" width="100%"></p>
+<p><img src="reference/figures/Cal_elec.svg" width="100%"></p>
 </div>
 </div>
   </div>
@@ -189,7 +193,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
 <li><a href="https://cran.r-project.org/package=USgrid"><img src="https://www.r-pkg.org/badges/version/USgrid" alt="CRAN status"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
 </ul>

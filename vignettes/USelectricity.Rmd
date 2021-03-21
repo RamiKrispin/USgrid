@@ -58,7 +58,7 @@ plot_ly(data = US_elec,
         mode = "lines") %>%
   layout(title = "US Electricity Generation vs. Demand",
          yaxis = list(title = "Mwh"),
-         xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)"))
+         xaxis = list(title = "Source: US Energy Information Administration (Mar 2021)"))
 ```
 
 
@@ -89,7 +89,7 @@ source_wider <- US_source %>%
   add_trace(y = ~solar, name = "Solar", fillcolor = "orange") %>%
   add_trace(y = ~petroleum, name = "Petroleum", fillcolor = "black") %>%
   layout(title = "US Electricity Generation by Energy Source Dist.",
-         xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)",
+         xaxis = list(title = "Source: US Energy Information Administration (Mar 2021)",
                       showgrid = FALSE),
          yaxis = list(title = "Percentage",
                       showgrid = FALSE,
@@ -119,6 +119,6 @@ plot_ly(data = Cal_elec,
         mode = "lines") %>%
   layout(title = "California Hourly Demand by Operator",
          yaxis = list(title = "Mwh"),
-         xaxis = list(title = "Source: US Energy Information Administration (Dec 2019)"))
+         xaxis = list(title = "Source: US Energy Information Administration (Mar 2021)"))
 ```
 
