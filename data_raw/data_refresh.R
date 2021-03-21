@@ -244,7 +244,7 @@ dt_refresh <- function(end_time, api_key = Sys.getenv("eia_key")){
   base::cat(base::paste(" Cal_elec series summary", "\n",
                         "-----------------------", "\n",
                         "Start time:", base::min(cal_elec_new$date_time), "\n",
-                        "End time:", base::max(cal_elec$date_time), "\n",
+                        "End time:", base::max(cal_elec_new$date_time), "\n",
                         "Missing values:", base::any(base::is.na(cal_elec_new$series))))
 
 
@@ -257,7 +257,10 @@ dt_refresh <- function(end_time, api_key = Sys.getenv("eia_key")){
 
 
 }
-dt_refresh(end_time = Sys.time())
+
+
+
+dt_refresh(end_time = lubridate::ymd_hms("2021-03-15 00:00:00", tz = "UTC"))
 
 
 
